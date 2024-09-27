@@ -26,7 +26,7 @@ public class Main {
         double[] vetor = new double[10];
         double[] vetorQuad = new double[10];
         for (int i = 0; i < vetor.length; i++) {
-            System.out.print("Número " + (i + 1) + ": ");
+            System.out.print("Número " + i + ": ");
             vetor[i] = sc.nextDouble();
             vetorQuad[i] = vetor[i] * vetor[i];
         }
@@ -41,7 +41,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int[] vetor = new int[8];
         for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + (i + 1) + ": ");
+            System.out.print("Número " + i + ": ");
             vetor[i] = sc.nextInt();
         }
         System.out.print("Escreva uma posição do vetor: ");
@@ -57,7 +57,7 @@ public class Main {
         int[] vetor = new int[10];
         int contadorPar = 0;
         for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + (i + 1) + ": ");
+            System.out.print("Número " + i + ": ");
             vetor[i] = sc.nextInt();
             if (vetor[i] % 2 == 0){
                 contadorPar++;
@@ -69,7 +69,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int[] vetor = new int[10];
         for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + (i + 1) + ": ");
+            System.out.print("Número " + i + ": ");
             vetor[i] = sc.nextInt();
         }
         int num = vetor[0];
@@ -84,8 +84,41 @@ public class Main {
                 num = vetor[i];
             }
         }
-        System.out.println("O menor número é: " + num);*/
+        System.out.println("O menor número é: " + num);
 
+        // Questão 7
+        Scanner sc = new Scanner(System.in);
+        int[] vetor = new int[3];
+        int numMaior = vetor[0];
+        int pos = 0;
+        for (int i = 0; i < vetor.length; i++){
+            System.out.print("Número "+ i + ": ");
+            vetor[i] = sc.nextInt();
+        }
+        for (int i = 0; i < vetor.length; i++){
+            if (vetor[i] > numMaior){
+                numMaior = vetor[i];
+                pos = i;
+            }
+            System.out.print(vetor[i] + " ");
+        }
+        System.out.println();
+        System.out.println("O número maior é: " + numMaior);
+        System.out.println("Está na posição: " + pos);
+
+        // Questão 8
+        Scanner sc = new Scanner(System.in);
+        int[] vetor = new int[6];
+
+        for (int i = 0; i < 6; i++){
+            System.out.print("Número " + i + ": ");
+            vetor[i] = sc.nextInt();
+        }
+        for (int i = 5; i >=0; i--){
+            System.out.print(vetor[i] + " ");
+        }*/
+
+        // Questão 9
         
     }
 }
