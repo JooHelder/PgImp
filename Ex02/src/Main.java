@@ -1,5 +1,6 @@
 import java.util.Scanner;
 public class Main {
+    public static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         /*
         // Questão 1
@@ -12,17 +13,13 @@ public class Main {
             System.out.println(A[i]);
         }
         // Questão 2
-        Scanner sc = new Scanner(System.in);
+
         int [] vetor = new int[5];
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.println("Escreva um número: ");
-            vetor[i] = sc.nextInt();
-        }
+        preencherVetor(vetor);
         for (int i = 0; i < vetor.length; i++) {
             System.out.println(vetor[i]);
         }
-        // Questão
-        Scanner sc = new Scanner(System.in);
+        // Questão 3
         double[] vetor = new double[10];
         double[] vetorQuad = new double[10];
         for (int i = 0; i < vetor.length; i++) {
@@ -38,12 +35,8 @@ public class Main {
             System.out.print(vetorQuad[i] + " ");
         }
         // Questão 4
-        Scanner sc = new Scanner(System.in);
         int[] vetor = new int[8];
-        for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + i + ": ");
-            vetor[i] = sc.nextInt();
-        }
+        preencherVetor(vetor);
         System.out.print("Escreva uma posição do vetor: ");
         int X = sc.nextInt();
         System.out.print("Escreva outra posição: ");
@@ -53,7 +46,6 @@ public class Main {
         System.out.println("O resultado da soma dos números na posição indicada é: " + soma);
 
         // Questão 5
-        Scanner sc = new Scanner(System.in);
         int[] vetor = new int[10];
         int contadorPar = 0;
         for (int i = 0; i < vetor.length; i++){
@@ -66,12 +58,8 @@ public class Main {
         System.out.println("Seu vetor tem "+ contadorPar + " números pares");
 
         // Questão 6
-        Scanner sc = new Scanner(System.in);
         int[] vetor = new int[10];
-        for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + i + ": ");
-            vetor[i] = sc.nextInt();
-        }
+        preencherVetor(vetor);
         int num = vetor[0];
         for (int i = 0; i < vetor.length; i++){
             if (vetor[i] > num){
@@ -87,14 +75,10 @@ public class Main {
         System.out.println("O menor número é: " + num);
 
         // Questão 7
-        Scanner sc = new Scanner(System.in);
         int[] vetor = new int[3];
         int numMaior = vetor[0];
         int pos = 0;
-        for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número "+ i + ": ");
-            vetor[i] = sc.nextInt();
-        }
+        preencherVetor(vetor);
         for (int i = 0; i < vetor.length; i++){
             if (vetor[i] > numMaior){
                 numMaior = vetor[i];
@@ -107,18 +91,37 @@ public class Main {
         System.out.println("Está na posição: " + pos);
 
         // Questão 8
-        Scanner sc = new Scanner(System.in);
         int[] vetor = new int[6];
-
-        for (int i = 0; i < 6; i++){
-            System.out.print("Número " + i + ": ");
-            vetor[i] = sc.nextInt();
-        }
+        preencherVetor(vetor);
         for (int i = 5; i >=0; i--){
             System.out.print(vetor[i] + " ");
         }*/
 
+
         // Questão 9
-        
+        int[] vetor = new int[6];
+        int count = 0;
+        while (count < vetor.length){
+            for (int i = 0; i < vetor.length; i++) {
+                System.out.println("Vetor" + " [" + i + "]: ");
+                int valor = sc.nextInt();
+                if (valor % 2 == 0) {
+                    vetor[count] = valor;
+                    count++;
+                } else {
+                    System.out.println("Por favor, digite um número par.");
+                }
+            }
+        }
+        for (int i = 5; i >=0; i--){
+            System.out.print(vetor[i] + " ");
+        }
+    }
+    
+    public static void preencherVetor(int[] vetor){
+        for (int i = 0; i < vetor.length; i++){
+            System.out.print("Número " + i + ": ");
+            vetor[i] = sc.nextInt();
+        }
     }
 }
