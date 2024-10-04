@@ -95,32 +95,64 @@ public class Main {
         preencherVetor(vetor);
         for (int i = 5; i >=0; i--){
             System.out.print(vetor[i] + " ");
-        }*/
-
+        }
 
         // Questão 9
         int[] vetor = new int[6];
-        int count = 0;
-        while (count < vetor.length){
-            for (int i = 0; i < vetor.length; i++) {
-                System.out.println("Vetor" + " [" + i + "]: ");
-                int valor = sc.nextInt();
-                if (valor % 2 == 0) {
-                    vetor[count] = valor;
-                    count++;
-                } else {
-                    System.out.println("Por favor, digite um número par.");
-                }
+        int contador = 0;
+        while (contador < 6) {
+            System.out.print("Digite um valor inteiro par para o vetor [" + contador + "]: " );
+            int valor = sc.nextInt();
+
+            if (valor % 2 == 0) { // Verifica se o número é par
+                vetor[contador] = valor; // Armazena o valor no array
+                contador++; // Incrementa o contador
+            } else {
+                System.out.println("Valor inválido! Por favor, digite um número par.");
             }
         }
-        for (int i = 5; i >=0; i--){
+        for (int i = vetor.length - 1; i >=0; i--){
             System.out.print(vetor[i] + " ");
         }
+
+        // Questão 10
+        int[] vetor = new int[15];
+        double media = 0.0;
+        double soma = 0.0;
+        preencherVetor(vetor);
+        for (int i = 0; i < vetor.length; i++){
+            soma += vetor[i];
+            media = soma / vetor.length;
+        }
+        System.out.println(media);
+
+
+        // Questão 11
+        double[] vetor = new double[10];
+        int quantNegativo = 0;
+        double somaPositivos = 0.0;
+        for (int i = 0; i < vetor.length; i++){
+            System.out.println("Vetor real[" + i + "]: ");
+            vetor[i] = sc.nextDouble();
+        }
+        for (int i = 0; i < vetor.length; i ++){
+            if (vetor[i] < 0){
+                quantNegativo++;
+            } else {
+                somaPositivos += vetor[i];
+            }
+        }
+        System.out.println("Quantidade de números negativos: " + quantNegativo);
+        System.out.println("Soma dos números positivos: " + somaPositivos);
+        */
+
+        // Questão 12
+        
     }
     
     public static void preencherVetor(int[] vetor){
         for (int i = 0; i < vetor.length; i++){
-            System.out.print("Número " + i + ": ");
+            System.out.print("Vetor " + i + ": ");
             vetor[i] = sc.nextInt();
         }
     }
