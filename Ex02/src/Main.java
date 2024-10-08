@@ -144,16 +144,75 @@ public class Main {
         }
         System.out.println("Quantidade de números negativos: " + quantNegativo);
         System.out.println("Soma dos números positivos: " + somaPositivos);
-        */
+
 
         // Questão 12
-        
+        double[] vetor = new double[5];
+        preencherVetorDouble(vetor);
+        double maior = vetor[0];
+        double menor = vetor[0];
+        double soma = 0;
+        double media = 0;
+        for (int i =0; i < vetor.length; i++){
+            if (vetor[i] > maior){
+                maior = vetor[i];
+            }
+            else if (vetor[i] < menor){
+                menor = vetor[i];
+            }
+            soma += vetor[i];
+        }
+        for (int i =0; i < vetor.length; i++){
+            System.out.print(vetor[i] + " ");
+        }
+        media = soma / vetor.length;
+        System.out.println();
+        System.out.println("O maior número é: " + maior);
+        System.out.println("O menor número é: " + menor);
+        System.out.println("A média é: " + media);
+
+        // Questão 13
+        double[] vetor = new double[5];
+        preencherVetorDouble(vetor);
+        double maior = vetor[0];
+        double menor = vetor[0];
+        int posMaior = 0, posMenor = 0;
+        for (int i =0; i < vetor.length; i++){
+            if (vetor[i] > maior){
+                maior = vetor[i];
+                posMaior = i;
+            }
+            if (vetor[i] < menor){
+                menor = vetor[i];
+                posMenor = i;
+            }
+        }
+        System.out.println("O maior valor é " + maior + " e está na posição " + posMaior);
+        System.out.println("O menor valor é " + menor + " e está na posição " + posMenor);*/
+
+        // Questão 14
+        int[] vetor = new int[10];
+        preencherVetor(vetor);
+        for (int i = 0; i < vetor.length; i++){
+            for (int j = i + 1; j < vetor.length; j++){
+                if (vetor[i] == vetor[j]){
+                    System.out.println("Valor " + vetor[i] + " se repete nas posições " + i +  " e " + j);
+                }
+            }
+        }
     }
     
     public static void preencherVetor(int[] vetor){
         for (int i = 0; i < vetor.length; i++){
             System.out.print("Vetor " + i + ": ");
             vetor[i] = sc.nextInt();
+        }
+    }
+
+    public static void preencherVetorDouble(double[] vetor){
+        for (int i = 0; i < vetor.length; i++){
+            System.out.print("Vetor " + i + ": ");
+            vetor[i] = sc.nextDouble();
         }
     }
 }
