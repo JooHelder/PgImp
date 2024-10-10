@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static final Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         /*
         // Questão 1
@@ -188,7 +189,7 @@ public class Main {
             }
         }
         System.out.println("O maior valor é " + maior + " e está na posição " + posMaior);
-        System.out.println("O menor valor é " + menor + " e está na posição " + posMenor);*/
+        System.out.println("O menor valor é " + menor + " e está na posição " + posMenor);
 
         // Questão 14
         int[] vetor = new int[10];
@@ -200,19 +201,47 @@ public class Main {
                 }
             }
         }
+
+        // Questão 15
+        int[] vetor = new int[5];
+        int[] vetorSemrepeticao = new int[5];
+        int contador = 0;
+
+        for (int i = 0; i < 5; i++){
+            System.out.print("Vetor " + i + ": ");
+            vetor[i] = sc.nextInt();
+            boolean encontrado = false;
+            for (int j = 0; j < contador; j++){
+                if (vetorSemrepeticao[j] == vetor[i]){
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (!encontrado){
+                vetorSemrepeticao[contador] = vetor[i];
+                contador++;
+            }
+        }
+        for (int i = 0; i < contador; i++){
+            System.out.print(vetorSemrepeticao[i] + " ");
+        }*/
+
+        // Questão 16
+
     }
-    
-    public static void preencherVetor(int[] vetor){
-        for (int i = 0; i < vetor.length; i++){
+
+    public static void preencherVetor(int[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
             System.out.print("Vetor " + i + ": ");
             vetor[i] = sc.nextInt();
         }
     }
 
-    public static void preencherVetorDouble(double[] vetor){
-        for (int i = 0; i < vetor.length; i++){
+    public static void preencherVetorDouble(double[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
             System.out.print("Vetor " + i + ": ");
             vetor[i] = sc.nextDouble();
         }
     }
+
 }
